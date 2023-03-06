@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="./normalize.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="./script.js" defer></script>
+        <title>Papaya Mix</title>
+    </head>
+    <body>
+        <header>
+            <a id="homeLink" href="./index.html">
+                <img src="./img/fullLogo.svg" alt="logo" id="logo" />
+            </a>
+        </header>
+        <main>
+            <form id="form">
+                <div class="inputContainer">
+                    <label for="nombre"> Nombre: </label>
+                    <input pattern="[A-Za-z]+" required id="nombre" type="text" />
+                </div>
+
+                <div class="inputContainer">
+                    <label for="apellido"> Apellidos: </label>
+                    <input pattern="[A-Za-z]+" required id="apellido" type="text" />
+                </div>
+
+                <div class="inputContainer">
+                    <label for="email"> Email: </label>
+                    <input required id="email" type="email" />
+                    <p class="instructionText">
+                        El email debe ser una expresión valida: <span class="lastWord">example@domain.com</span>
+                    </p>
+                </div>
+
+                <div class="inputContainer">
+                    <label for="nTelefono"> Número de teléfono: </label>
+                    <input pattern="^\d{8}$" required id="nTelefono" type="tel" />
+                    <p class="instructionText">El No de teléfono tiene 8 <span class="lastWord">dígitos</span></p>
+                </div>
+
+                <div class="inputContainer">
+                    <label for="contraseña"> Contraseña: </label>
+                    <input required id="contraseña" type="password" />
+                    <p class="instructionText">Tiene al menos 8 <span class="lastWord">caracteres</span></p>
+                    <p class="instructionText">Tiene mayúsculas y <span class="lastWord">minúsculas</span></p>
+                    <p class="instructionText">Tiene al menos 1 <span class="lastWord">dígito</span></p>
+                    <p class="instructionText">
+                        Tiene al menos 1 carácter especial <span class="lastWord">(.*>,¿¡ etc)</span>
+                    </p>
+                </div>
+
+                <div class="inputContainer">
+                    <label for="rContraseña"> Repetir contraseña: </label>
+                    <input required id="rContraseña" type="password" />
+                    <p class="instructionText">Las contraseñas <span class="lastWord">coinciden</span></p>
+                </div>
+
+                <button form="form" id="createButton" type="submit">Crear cuenta</button>
+
+                <a id="logIn" href="./index.html">¿Ya tienes cuenta? <span id="highlight">Iniciar sesión</span></a>
+            </form>
+        </main>
+        <footer>
+            <a target="_blank" href="https://github.com/MoraMartin99/Sign-Up-Form-Papaya-Mix" id="github">
+                Oscar Martin Mora
+                <img src="./img/github.svg" alt="github logo" id="githubLogo" />
+            </a>
+        </footer>
+    </body>
+</html>
