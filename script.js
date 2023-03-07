@@ -49,3 +49,81 @@ const areSamePassword = (input) => {
 
 /* -------------------------------------------------------------------------------------------------- */
 
+/* Handlers */
+/* -------------------------------------------------------------------------------------------------- */
+const focusOutHandler = (e) => {
+    const target = e.target;
+    testHandler(target);
+    if (!target.checkValidity()) {
+        target.addEventListener("input", onInputHandler);
+    }
+};
+
+const onInputHandler = (e) => {
+    const target = e.target;
+    testHandler(target);
+};
+
+const rippleHandler = (e) => {
+    const button = e.currentTarget;
+    const children = Array.from(document.querySelectorAll(`#${button.id} *`));
+
+    children.forEach((child) => {
+        child.remove();
+    });
+
+    const ripple = document.createElement("div");
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+    const coordinateX = e.clientX - button.getBoundingClientRect().x - radius;
+    const coordinateY = e.clientY - button.getBoundingClientRect().y - radius;
+    ripple.classList.add("ripple");
+
+    button.appendChild(ripple);
+    ripple.style.width = `${diameter}px`;
+    ripple.style.height = `${diameter}px`;
+    ripple.style.left = `${coordinateX}px`;
+    ripple.style.top = `${coordinateY}px`;
+};
+
+const testHandler = (input) => {
+    const testOptions = {
+        nombre: { test: [isValidHTMLInput] },
+        apellido: { test: [isValidHTMLInput] },
+        email: { test: [isValidHTMLInput] },
+        nTelefono: { test: [isValidHTMLInput] },
+        contraseña: { test: [hasMinimumLength, hasUpperAndLowerCase, hasDigit, hasSpecialChar] },
+        rContraseña: { test: [areSamePassword] },
+    };
+    const testArr = testOptions[input.id].test;
+    const inputInstTextArr = Array.from(document.querySelectorAll(`#${input.id} ~ .instructionText`));
+    const resultArr = testArr.map((currentTest, currentIndex) => {
+        const result = currentTest(input);
+        if (result) {
+            if (inputInstTextArr.length > 0) {
+                removeClass(inputInstTextArr[currentIndex], ["customInvalid"]);
+                addClass(inputInstTextArr[currentIndex], ["customValid"]);
+            }
+            return result;
+        }
+        if (inputInstTextArr.length > 0) {
+            removeClass(inputInstTextArr[currentIndex], ["customValid"]);
+            addClass(inputInstTextArr[currentIndex], ["customInvalid"]);
+        }
+        return result;
+    });
+    const succeedAllTest = resultArr.every((test) => {
+        return test === true;
+    });
+
+    addClass(input, ["targetInput"]);
+
+    if (succeedAllTest) {
+        input.setCustomValidity("");
+    } else {
+        input.setCustomValidity("Favor ingresar un valor válido");
+    }
+};
+
+/* -------------------------------------------------------------------------------------------------- */
+
