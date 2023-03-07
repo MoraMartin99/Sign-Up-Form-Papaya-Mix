@@ -24,3 +24,58 @@
 }
 /* --------------------------------------------------------------------------------------------------------- */
 
+/* Estilos globales */
+/* --------------------------------------------------------------------------------------------------------- */
+
+html {
+    --bodyBGColor: #ffdeb3ff;
+    --formBGColor: #ffe8ccff;
+    --headerPadding: clamp(1.5625rem, 0.9375rem + 3.125vw, 2.8125rem);
+    --logoWidth: clamp(10.774rem, 4.7128437499999976rem + 30.30578125000001vw, 22.8963125rem);
+    --headerOffset: -18.7%;
+    --labelFontSize: clamp(0.71875rem, 0.515625rem + 1.015625vw, 1.125rem);
+    --inputWidth: clamp(13.5rem, 9.78125rem + 18.59375vw, 20.9375rem);
+    --inputHeight: clamp(1.40625rem, 1.015625rem + 1.953125vw, 2.1875rem);
+    --inputFontSize: clamp(0.64375rem, 0.46562500000000007rem + 0.8906249999999999vw, 1rem);
+    --inputContainerRowGap: 5px;
+    --instructionTextFontSize: clamp(0.5625rem, 0.40625rem + 0.78125vw, 0.875rem);
+    --buttonColor: #ff8d00ff;
+    --buttonFontSize: clamp(0.71644375rem, 0.44966562500000007rem + 1.333890625vw, 1.25rem);
+    --buttonWidth: clamp(7.5rem, 4.6875rem + 14.0625vw, 13.125rem);
+    --buttonHeight: clamp(2.5rem, 1.5625rem + 4.6875vw, 4.375rem);
+    --logInFontSize: clamp(0.625rem, 0.4375rem + 0.9375000000000001vw, 1rem);
+    --highlightColor: #b26000ff;
+    --githubFontSize: clamp(0.6875rem, 0.53125rem + 0.78125vw, 1rem);
+    --githubColumnGap: clamp(0.3125rem, 0.15625rem + 0.78125vw, 0.625rem);
+    --githubColor: #804300ff;
+    --githubLogoWidth: clamp(1.25rem, 0.8125rem + 2.1875vw, 2.125rem);
+    --invalidColor: #810000ff;
+    --validColor: #018000ff;
+    --indicatorWidth: clamp(0.75rem, 0.5rem + 1.25vw, 1.25rem);
+    --indicatorGap: clamp(0.1875rem, 0.125rem + 0.3125vw, 0.3125rem);
+    --githubhovercolor: #ffca80ff;
+    --rippleBackgroundColor: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+}
+
+body,
+body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0px;
+    font-family: "jost", Arial, Verdana, Tahoma, "Trebuchet MS";
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--bodyBGColor);
+    display: grid;
+    grid-template-rows: max-content max-content minmax(calc(var(--headerPadding) * 2), 1fr);
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    justify-items: center;
+    align-items: center;
+}
+/* --------------------------------------------------------------------------------------------------------- */
+
