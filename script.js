@@ -159,3 +159,13 @@ let printAllEventListener = () => {
 
 /* -------------------------------------------------------------------------------------------------- */
 
+/* Inicio automático después de la carga de index.html */
+/* -------------------------------------------------------------------------------------------------- */
+
+inputArr.forEach((currentInput) => {
+    currentInput.addEventListener("focusout", focusOutHandler);
+});
+
+createButton.addEventListener("click", rippleHandler);
+
+/* -------------------------------------------------------------------------------------------------- */
