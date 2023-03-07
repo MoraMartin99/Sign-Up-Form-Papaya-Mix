@@ -144,3 +144,18 @@ const removeClass = (element, classArr) => {
 
 /* -------------------------------------------------------------------------------------------------- */
 
+/* Utilidades */
+/* -------------------------------------------------------------------------------------------------- */
+
+let printAllEventListener = () => {
+    let elementArr = Array.from(document.querySelectorAll("body, body *"));
+    elementArr.forEach((element) => {
+        if (Object.keys(getEventListeners(element)).length > 0) {
+            console.log(getEventListeners(element));
+            console.log(element);
+        }
+    });
+};
+
+/* -------------------------------------------------------------------------------------------------- */
+
