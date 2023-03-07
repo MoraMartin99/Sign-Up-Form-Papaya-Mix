@@ -262,3 +262,27 @@ input {
     }
 }
 /* --------------------------------------------------------------------------------------------------------- */
+
+/* footer */
+/* --------------------------------------------------------------------------------------------------------- */
+
+#github {
+    padding: 0.25em 0.35em;
+    font-size: var(--githubFontSize);
+    font-weight: 500;
+    color: var(--githubColor);
+    display: flex;
+    gap: var(--githubColumnGap);
+    align-items: center;
+}
+
+#github:hover {
+    border-radius: 10px;
+    background-color: var(--githubhovercolor);
+}
+
+#githubLogo {
+    width: var(--githubLogoWidth);
+}
+
+/* --------------------------------------------------------------------------------------------------------- */
