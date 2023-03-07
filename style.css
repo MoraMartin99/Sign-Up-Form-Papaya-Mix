@@ -1,0 +1,26 @@
+/* Fuentes */
+/* --------------------------------------------------------------------------------------------------------- */
+@font-face {
+    font-family: "jost";
+    src: url(./font/jost-400-book-webfont.woff2) format("woff2"), url(./font/jost-400-book-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "jost";
+    src: url(./font/jost-400-bookitalic-webfont.woff2) format("woff2"),
+        url(./font/jost-400-bookitalic-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "jost";
+    src: url(./font/jost-500-medium-webfont.woff2) format("woff2"),
+        url(./font/jost-500-medium-webfont.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+/* --------------------------------------------------------------------------------------------------------- */
+
