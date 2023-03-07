@@ -98,3 +98,167 @@ header {
 }
 /* --------------------------------------------------------------------------------------------------------- */
 
+/* Main */
+/* --------------------------------------------------------------------------------------------------------- */
+
+form {
+    padding: 15px 17px;
+    background-color: var(--formBGColor);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+label {
+    font-size: var(--labelFontSize);
+    font-weight: 500;
+}
+
+input {
+    display: block;
+    font-size: var(--inputFontSize);
+    font-weight: 500;
+    padding-left: 1em;
+    background-color: white;
+    width: var(--inputWidth);
+    height: var(--inputHeight);
+    border: 1px solid black;
+}
+
+.instructionText {
+    font-size: var(--instructionTextFontSize);
+    font-weight: 400;
+    font-style: italic;
+}
+
+.lastWord {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+    gap: var(--indicatorGap);
+}
+
+.lastWord::after {
+    display: inline-block;
+    content: "";
+    width: var(--indicatorWidth);
+    height: var(--indicatorWidth);
+}
+
+.targetInput:invalid {
+    border: 1px solid var(--invalidColor);
+    color: var(--invalidColor);
+}
+
+.targetInput:valid {
+    border: 1px solid var(--validColor);
+    color: var(--validColor);
+}
+.targetInput ~ .customInvalid {
+    color: var(--invalidColor);
+}
+
+.targetInput ~ .customInvalid .lastWord::after {
+    content: "";
+    background-image: url(./img/error.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.targetInput ~ .customValid {
+    color: var(--validColor);
+}
+
+.targetInput ~ .customValid .lastWord::after {
+    content: "";
+    background-image: url(./img/check.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.inputContainer {
+    width: var(--inputWidth);
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--inputContainerRowGap);
+    align-items: flex-start;
+}
+
+#createButton {
+    position: relative;
+    font-size: var(--buttonFontSize);
+    font-weight: 500;
+    border: none;
+    background-color: var(--buttonColor);
+    width: var(--buttonWidth);
+    height: var(--buttonHeight);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#createButton:hover {
+    filter: brightness(1.1);
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: rippleAnimation 600ms linear;
+    background-color: var(--rippleBackgroundColor);
+}
+
+@keyframes rippleAnimation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+#logIn {
+    font-size: var(--logInFontSize);
+    font-weight: 500;
+    color: black;
+    position: relative;
+}
+
+#logIn:hover::after {
+    position: absolute;
+    width: 100%;
+    display: block;
+    content: "";
+    font-size: inherit;
+    border-bottom: 1.5px solid var(--githubColor);
+}
+#highlight {
+    font-size: inherit;
+    font-weight: inherit;
+    color: var(--highlightColor);
+}
+
+@media only screen and (min-width: 960px) {
+    form {
+        padding: 60px 77.5px;
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        grid-template-rows: repeat(5, max-content);
+        gap: 20px;
+        align-items: start;
+        justify-items: center;
+    }
+
+    #createButton,
+    #logIn {
+        grid-column: 1 / span 2;
+    }
+
+    footer {
+        align-self: end;
+        margin-bottom: 15px;
+    }
+}
+/* --------------------------------------------------------------------------------------------------------- */
