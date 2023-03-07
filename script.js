@@ -127,3 +127,20 @@ const testHandler = (input) => {
 
 /* -------------------------------------------------------------------------------------------------- */
 
+/* Funciones de bajo nivel */
+/* -------------------------------------------------------------------------------------------------- */
+
+const addClass = (element, classArr) => {
+    classArr.forEach((currentClass) => {
+        element.classList.add(currentClass);
+    });
+};
+
+const removeClass = (element, classArr) => {
+    classArr.forEach((currentClass) => {
+        element.classList.remove(currentClass);
+    });
+};
+
+/* -------------------------------------------------------------------------------------------------- */
+
